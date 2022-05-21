@@ -1,5 +1,6 @@
 /**
- * ### Example
+ * Makes IDE suggest defined types while also allowing anything with the same primitive type.   
+ * #### Example
  * ```ts
  * const color: LiteralUnion<'yellow' | 'black'>
  * ```
@@ -8,8 +9,8 @@
 export type LiteralUnion<T extends U, U = string> = T | (U & {});
 
 /**
- * Removes matching properties.
- * ### Example
+ * Construct a type with the properties of T except for those extend type K.
+ * #### Example
  * ```ts
  * interface Example {
  *  a: number
@@ -23,7 +24,8 @@ export type LiteralUnion<T extends U, U = string> = T | (U & {});
 export type OmitMatch<T, V> = Pick<T, { [K in keyof T]-?: T[K] extends V ? never : K }[keyof T]>
 
 /**
- * ### Example
+ * Extract types from constant array T.  
+ * #### Example
  * ```ts
  * const allowedColors = ['red', 'blue', 'green'] as const
  * type Colors = ExtractGeneric<typeof allowedColors>
