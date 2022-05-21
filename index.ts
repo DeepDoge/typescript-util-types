@@ -8,6 +8,7 @@
 export type LiteralUnion<T extends U, U = string> = T | (U & {});
 
 /**
+ * Removes matching properties.
  * ### Example
  * ```ts
  * interface Example {
@@ -15,11 +16,11 @@ export type LiteralUnion<T extends U, U = string> = T | (U & {});
  *  b(): void
  *  c(num: number): number
  * }
- * type ExampleWithoutFunctions = ExcludeMatchingProperties<Example, Function>
+ * type ExampleWithoutFunctions = OmitMatch<Example, Function>
  * ```
  * `ExampleWithoutFunctions` type is not going to have `b` and `c` because they extend `Function`
  */
-export type ExcludeMatchingProperties<T, V> = Pick<T, { [K in keyof T]-?: T[K] extends V ? never : K }[keyof T]>
+export type OmitMatch<T, V> = Pick<T, { [K in keyof T]-?: T[K] extends V ? never : K }[keyof T]>
 
 /**
  * ### Example
