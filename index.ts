@@ -29,7 +29,7 @@ export type ExcludeMatchingProperties<T, V> = Pick<T, { [K in keyof T]-?: T[K] e
  * ```
  * `Colors` type gives us:
  * ```ts
- * 'red' | 'blur' | 'green'
+ * 'red' | 'blue' | 'green'
  * ```
  */
 export type ExtractGeneric<T extends readonly any[]> = T extends readonly (infer U)[] ? U : never
