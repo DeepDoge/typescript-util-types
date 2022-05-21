@@ -1,5 +1,5 @@
 /**
- * Makes IDE suggest defined types while also allowing anything with the same primitive type.   
+ * Makes IDE suggest defined types T while also allowing anything with the same primitive type U.   
  * #### Example
  * ```ts
  * const color: LiteralUnion<'yellow' | 'black'>
