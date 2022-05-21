@@ -19,10 +19,7 @@ export type LiteralUnion<T extends U, U = string> = T | (U & {});
  * ```
  * `ExampleWithoutFunctions` type is not going to have `b` and `c` because they extend `Function`
  */
-export type ExcludeMatchingProperties<T, V> = Pick<
-    T,
-    { [K in keyof T]-?: T[K] extends V ? never : K }[keyof T]
->
+export type ExcludeMatchingProperties<T, V> = Pick<T, { [K in keyof T]-?: T[K] extends V ? never : K }[keyof T]>
 
 /**
  * ### Example
