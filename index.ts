@@ -9,7 +9,7 @@
 export type LiteralUnion<T extends U, U = string> = T | (U & {});
 
 /**
- * Construct a type with the properties of T except for those extend type K.
+ * Construct a type with the properties of T except for those extend type V.
  * #### Example
  * ```ts
  * interface Example {
