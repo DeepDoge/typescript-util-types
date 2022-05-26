@@ -13,7 +13,7 @@ git submodule add https://github.com/DeepDoge/typescript-util-types.git ./src/ty
 You can run these post install. (Add to npm run postinstall)
 
 ```bash
-git submodule init ; git submodule update ; git submodule foreach --recursive git submodule init ; git submodule foreach --recursive git submodule update ; git submodule foreach --recursive git checkout master
+git submodule update ; git submodule foreach --recursive "git submodule update"
 ```
 
 ## Manually
