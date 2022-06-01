@@ -21,7 +21,7 @@ export type LiteralUnion<T extends U, U = string> = T | (U & {});
  * ```
  * `ExampleWithoutFunctions` type is not going to have `b` and `c` because they extend `Function`
  */
-export type OmitMatch<T, V> = Pick<T, { [K in keyof T]-?: T[K] extends V ? never : K }[keyof T]>
+ export type OmitMatch<T, V> = Pick<T, { [K in keyof T]-?: T[K] extends V ? never : K }[keyof T]>
 
 /**
  * Extract types from constant array T.  
