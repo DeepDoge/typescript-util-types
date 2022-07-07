@@ -6,7 +6,7 @@
  * ```
  * You get `yellow` and `black` suggestions while being able to use any other string.
  */
-export type LiteralUnion<T extends U, U = string> = T | (U & {});
+export type LiteralUnion<T extends U, U = string> = T | (U & {})
 
 /**
  * Construct a type with the properties of T except for those extend type V.
