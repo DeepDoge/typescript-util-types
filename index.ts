@@ -36,3 +36,10 @@ export type OmitMatch<T, V> = Pick<T, { [K in keyof T]-?: T[K] extends V ? never
  * ```
  */
 export type ExtractGeneric<T extends readonly any[]> = T extends readonly (infer U)[] ? U : never
+
+export type ReplaceType<T extends object, Search, Replace> = {
+    [K in keyof T]:
+    T[K] extends Search ? Replace :
+    T[K] extends object ? ReplaceType<T[K], Search, Replace> :
+    T[K]
+}
